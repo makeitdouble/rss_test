@@ -1,0 +1,24 @@
+
+<div class="rssTitles">
+    <div ng-if="!items">Loading...</div>
+    <div ng-if="items" >
+        <label>Unread only <input type="checkbox" ng-model="mf.value"/></label>| <b ng-click="clear()" style="cursor:pointer">Make unread</b>
+        <p>Авторов: {{authCount}} | Сообщений: {{itemsCount}}</p>
+        <ul class="titlesList">
+            <li ng-repeat="item in items | filter: unreadFilter()" ng-click="showMessage($index)" class="{{item.read ? 'read' : 'unread'}}">
+                {{item.title}}
+            </li>
+        </ul>
+    </div>
+</div>
+
+
+<div ng-if="message" class="message">
+    <p ng-bind-html="message.description"></p>
+</div>
+<div class="wrapper">
+        <script type="text/javascript">
+            google.charts.load("current", {packages:["corechart"]});
+        </script>
+        <div id="piechart" style="width: 300px; height: 300px;"></div>
+</div>

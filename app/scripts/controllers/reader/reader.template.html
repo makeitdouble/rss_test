@@ -1,0 +1,8 @@
+
+<div class="rssList">
+    <ol>
+        <li ng-repeat="feed in rssFeeds" ng-click="getMessages()">
+            <a ng-href="#!/reader/{{$index}}">{{feed}}</a>
+        </li>
+    </ol>
+</div>
